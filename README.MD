@@ -1,3 +1,3 @@
-# Breath of Fire III Save Editor
+# Breath of Fire IV Save Editor
 
 -- readme WIP --
