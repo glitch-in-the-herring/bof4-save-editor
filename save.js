@@ -23,16 +23,11 @@ function save_file(e)
 function checksum(byte_array, addr)
 {
     let sum = 0;
-    let buffer;
-    byte_array[addr + 0x270] = 0;
-    byte_array[addr + 0x271] = 0;
 
-    for (let i = 0; i < 0x1e00; i++)
-        sum += byte_array[addr + 0x200 + i];
+    for (let i = 0; i < 0x184f; i++)
+        sum ^= byte_array[addr + i];
 
-    buffer = to_little_endian_u(sum, 4);
-    byte_array[addr + 0x270] = buffer[0];
-    byte_array[addr + 0x271] = buffer[1];
+    byte_array[addr + 0x184f] = sum;
 }
 
 function save_char(byte_array, slot)

@@ -17,16 +17,16 @@ function load_char(byte_array)
     let char;
     let base_address;
 
-    for (let i = 0; i < 8; i++)
+    for (let i = 0; i < 7; i++)
     {
         char = {};
-        base_address = 0xa4 * i;
-        char["name"] = ascii_decoder(byte_array.slice(base_address, base_address + 5));
-        char["lvl"] = String(byte_array[base_address + 6]);
-        char["exp"] = String(from_little_endian_u(byte_array.slice(base_address + 8, base_address + 12)));
-        char["chp"] = String(from_little_endian_u(byte_array.slice(base_address + 20, base_address + 22)));
-        char["cap"] = String(from_little_endian_u(byte_array.slice(base_address + 22, base_address + 24)));
-        char["cmhp"] = String(from_little_endian_u(byte_array.slice(base_address + 28, base_address + 30)));
+        base_address = 0x98 * i;
+        char["name"] = ascii_decoder(byte_array.slice(base_address, base_address + 6)); // changed
+        char["lvl"] = String(byte_array[base_address + 8]); // changed
+        char["exp"] = String(from_little_endian_u(byte_array.slice(base_address + 12, base_address + 16))); // changed
+        char["chp"] = String(from_little_endian_u(byte_array.slice(base_address + 20, base_address + 22))); // changed
+        char["cap"] = String(from_little_endian_u(byte_array.slice(base_address + 24, base_address + 26))); // changed
+        char["cmhp"] = String(from_little_endian_u(byte_array.slice(base_address + 24, base_address + 30)));
         char["cmap"] = String(from_little_endian_u(byte_array.slice(base_address + 30, base_address + 32)));
         char["tmhp"] = String(from_little_endian_u(byte_array.slice(base_address + 60, base_address + 62)));
         char["tmap"] = String(from_little_endian_u(byte_array.slice(base_address + 62, base_address + 64)));

@@ -1,228 +1,256 @@
 --
-Nue Stomp
-Gambit
-Super Combo
-ThundrStrike
-Flame Strike
-Mind Sword
-Mind Flay
-Blind
-Chlorine
-Unmotivate
-Multistrike
-Blitz
-Snap
-Flying Kick
-Charge
-Air Raid
-Astral Warp
-Giant Growth
-Aura
-Disembowel
-Bonebreak
-Spirit Blast
-Bad back
-Watch Enemy
-Nothing (White Flag)
-Counter
-Hypnotize
-Devour
-Wind Strike
-Molasses
-Tarbaby
-Absorb
-Healing Herb
-Steroids
-Magic Belt
-Recall
-MagicShuffle
-War Shout
-Focus
-Enlighten
-Berserk
-Mind's Eye
-WardOfLight
-Evil Eye
-Bone Dart
-Firebreath
-Icebreath
-Dream Breath
-Frost Strike
-Pollen
-Venom Breath
-Ovum
-Lavaburst
-Howling
-Ebonfire
-Sacrifice
-Bone Dance
-Sanctuary
-Tornado
-Identify
-Target
-Celerity
-SuddenDeath
-Weretiger
-Pilfer
-Tsunami
-Chill
-Foretell
-Influence
+Flare
+Fireblast
+Inferno
+Sever
+Cyclone
+Typhoon
+Frost
+Ice Blast
+Blizzard
+Rock Blast
+Stone Pillar
+Quake
+Firewind
+Simoon
+Gigaflare
+Earthbreaker
+Jolt
+Lightning
+Thunderstorm
+Mjollnir
+Storm
+Tempest
+Disaster
+Catastrophe
+Eruption
+Magma Blast
+Ragnarok
+Supernova
+Kyrie
+Death
+Sleep
+Confuse
+Silence
+Blunt
+Weaken
+Slow
+Enfeeble
+Might
+Protect
+Shield
+Speed
+Inspire
+Barrier
 Heal
 Rejuvenate
 Restore
 Vitalize
 Vigor
-Purify
 Raise Dead
 Resurrect
-Leech Power
-Drain
-Nothing (Smoke)
-RottenBreath
-Protect
-Shield
-Speed
-Might
-Barrier
-Silence
-Slow
-Blunt
-Weaken
-Flare
-Fireblast
-Inferno
-Frost
-Iceblast
-Blizzard
-Jolt
-Lightning
-Myollnir
-Cyclone
-Typhoon
-Quake
-Simoon
-Sirocco
-Kyrie
-Death
-Sleep
-Confuse
-Depress
-Ragnarok (1)
-Nothing (Hourglass)
-Nothing (Again 1)
-Nothing (Pentagram)
-Fire Whip
+Purify
 Remedy
-UtmostAttack
-Rest
-Burn
-Double Blow
-Whelp Breath
+Drain
+Leech Power
+Sacrifice
+Boil
+Hatch
+Body Press
+Filch
+Gigaflame
+MetaStrike
+Waterspout
+MeteorStrike
+Stardrop
 DragonBreath
-Flame Breath
-Frost Breath
-ThundrBreath
-DivineBreath
-ShadowBreath
-Nothing (Assault)
-Head Cracker
-Holocaust
-Venom
 KaiserBreath
-Doom Breath
-Flame Claw
-Frost Claw
-Thunder Claw
-Shining Claw
-Corona
-Main Cannon
-Paralyzer
-Trump
-Triple Blow
-Syphon
-Thunder Clap
-Wall of Fire
-Nothing (Ink)
-Nothing (InkInk)
-Nothing (Death Bomb)
-Nothing (Roulette)
-Douse
-Eye Beam
-Accession
-Snooze
-Resist
-Mighty Chop
-Pyrokinesis
-Holy Strike
-Demonbane
-Charm
-Gloom
-Jump
-Timed Blow
-Transfer
-Meditation
-Feign Swing
-Backhand
-Monopolize
-Last Resort
-Cure
-Benediction
+Onslaught
+Mud Flow
+Healing Wind
+Rainstorm
+Flood Tide
+Fulguration
+Holy Circle
+Eraser
+Dark Wave
+Meditate
+Revert Form
+Ponder
+Feeding Time
+Vacuum
+Summon Kin
+EldrichFlame
+Aura Smash
+Wild Swing
 Risky Blow
 Shadowwalk
+Disembowel
+Super Combo
 Magic Ball
-Intimidate
-Heal
-Rejuvenate
-Restore
-Vitalize
-Vigor
-Purify
-Raise Dead
-Resurrect
-Leech Power
-Drain
-Protect
-Shield
-Speed
-Might
-Barrier
-Silence
-Slow
-Blunt
-Weaken
-Flare
-Fireblast
-Inferno
-Frost
-Iceblast
-Blizzard
-Jolt
-Lightning
-Myollnir
-Cyclone
-Typhoon
-Quake
-Simoon
-Sirocco
-Kyrie
-Death
-Sleep
-Confuse
-Depress
-Ragnarok
-Nothing (PurifyAll)
-Nothing (Again 2)
-Remedy
+Blitz
+SwordBreaker
+Megaphone
+Snap
+Molasses
+Chlorine
+Knock Out
+Feint
+Blind
+Muffle
+Air Raid
+Feign Swing
+Distracted
+Bad Back
+Focus
+Concentrate
+Resist
+Counter
+Supplication
+Last Resort
+Celerity
+Final Hope
+Shout
+Sanctuary
+Command
+Rest
+Snooze
+Palliate
+Transfer
+Benediction
 Steal
-Restore Form
-Aura Breath
-Magma Breath
-Geo Breath
-Gaea'sBreath
-Combustion
-Tempest
-Hurricane
-Temptation
-MeteorStrike (1)
-MeteorStrike (2)
+Pilfer
+Monopolize
+Charm
+Double Blow
+Multistrike
+Triple Blow
+Oracle
+Spray
+Clip
+SpiritBlast
+Cleave
+Flame Strike
+Wind Strike
+Frost Strike
+Searing Sand
+Holy Strike
+Backhand
+Timed Blow
+Coward's Way
+Reversal
+Egghead
+Douse
+Curse
+Sacrifice
+FaerieBreath
+War Shout
+FaerieAttack
+FaerieCharge
+Ebonfire
+Roulette
+Mind Flay
+Burn
+Eddy
+Icicle
+Plateau
+Target
+Tiger Fist
+Flex
+Flame Pillar
+?
+Hwa (fire)
+Jeh (fire)
+Hwajeh
+P'ung (Wind)
+Nah P'ung
+Ahryu P'ung
+Bing (water)
+Bing'ah
+Pa Bing'ah
+Patoh(earth)
+Chi Patoh
+Patoh Pah
+Phoenix
+Mudslide
+Ice Sword
+Reflect
+Lifestealer
+ShiningBlade
+Risky Shot
+Wild Shot
+Healing Herb
+MultiVitamin
+Absorb
+Dark Breath
+Chakra
+Syphon
+Devour
+Ram
+Flaming Fist
+Howling
+VenomBreath
+Spores
+Powder
+DreamBreath
+Ovum
+Gloom
+Mystic Fire
+Frost Breath
+Giant Growth
+Depress
+Recall
+Primus
+Backlash
+Watch Enemy
+Wither
+Malefication
+Jump
+Revolution
+Soul Rend
+Stasis
+Aura
+Kaiser
+Astral
+Tyrant
+Wyvern
+Weyr
+Myrmidon
+Knight
+Serpent
+Peist
+Behemoth
+Mammoth
+Mutant
+Punk
+Cheering
+CoveringFire
+Flail
+Whirlwind
+Jab
+Shift
+Nose Dive
+Power Flux
+Punch
+Kick
+SummonMinion
+Mystic Fire
+Flaming Fist
+EldrichFlame
+Identify
+Stand Out
+Rakhasa
+Aura Smash
+Whiteout
+Dark Wave
+Gigaflame
+Waterspout
+MeteorStrike
+MetaStrike
+Stardrop
+Booster
+Panzer
+Maelstrom
+Gravedigger
+Defender
+Quicksilver

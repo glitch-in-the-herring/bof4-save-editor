@@ -20,15 +20,13 @@ function browse_toc(byte_array)
 
 function check_toc_entry(byte_array, current_address)
 {
-    //const code_JP = "SLPS-00990BOF3";
-    const code_US = "SLUS-00422BOF3";
-    const code_EU = "SLES-01304BOF3";
+    const code_US = "SLUS-01324BOF4";
+    const code_EU = "SLES-03552BOF4";
 
     for (let i = 0; i < 0x0E; i++)
     {       
-        if (/*byte_array[current_address + 0x0C + i] != code_JP[i].charCodeAt() &&*/
-            byte_array[current_address + 0x0C + i] != code_US[i].charCodeAt() &&
-            byte_array[current_address + 0x0C + i] != code_EU[i].charCodeAt())
+        if (byte_array[current_address + 0x0C + i] != code_US[i].charCodeAt() 
+            && byte_array[current_address + 0x0C + i] != code_EU[i].charCodeAt())
             return false;
     }
 
