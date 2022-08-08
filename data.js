@@ -21,51 +21,45 @@ function load_char(byte_array)
     {
         char = {};
         base_address = 0x98 * i;
-        char["name"] = ascii_decoder(byte_array.slice(base_address, base_address + 6)); // changed
-        char["lvl"] = String(byte_array[base_address + 8]); // changed
-        char["exp"] = String(from_little_endian_u(byte_array.slice(base_address + 12, base_address + 16))); // changed
-        char["chp"] = String(from_little_endian_u(byte_array.slice(base_address + 20, base_address + 22))); // changed
-        char["cap"] = String(from_little_endian_u(byte_array.slice(base_address + 24, base_address + 26))); // changed
-        char["cmhp"] = String(from_little_endian_u(byte_array.slice(base_address + 24, base_address + 30)));
-        char["cmap"] = String(from_little_endian_u(byte_array.slice(base_address + 30, base_address + 32)));
-        char["tmhp"] = String(from_little_endian_u(byte_array.slice(base_address + 60, base_address + 62)));
-        char["tmap"] = String(from_little_endian_u(byte_array.slice(base_address + 62, base_address + 64)));
-        char["pwr"] = String(from_little_endian_u(byte_array.slice(base_address + 64, base_address + 66)));
-        char["def"] = String(from_little_endian_u(byte_array.slice(base_address + 66, base_address + 68)));
-        char["agl"] = String(from_little_endian_u(byte_array.slice(base_address + 68, base_address + 70)));
-        char["int"] = String(from_little_endian_u(byte_array.slice(base_address + 70, base_address + 72)));
-        char["wpwr"] = String(byte_array[base_address + 74]);
-        char["sprs"] = String(byte_array[base_address + 84]);
-        char["rprs"] = String(byte_array[base_address + 85]);
-        char["crit"] = String(byte_array[base_address + 86]);
-        char["dodg"] = String(byte_array[base_address + 87]);
-        char["hits"] = String(byte_array[base_address + 88]);
-        char["fatg"] = String(byte_array[base_address + 25]);
-        char["master"] = String(byte_array[base_address + 27]);
+        char["name"] = ascii_decoder(byte_array.slice(base_address, base_address + 6));
+        char["lvl"] = String(byte_array[base_address + 8]);
+        char["exp"] = String(from_little_endian_u(byte_array.slice(base_address + 12, base_address + 16)));
+        char["chp"] = String(from_little_endian_u(byte_array.slice(base_address + 20, base_address + 22)));
+        char["cap"] = String(from_little_endian_u(byte_array.slice(base_address + 24, base_address + 26)));
+        char["cmhp"] = String(from_little_endian_u(byte_array.slice(base_address + 56, base_address + 58)));
+        char["cmap"] = String(from_little_endian_u(byte_array.slice(base_address + 60, base_address + 62)));
+        char["tmhp"] = String(from_little_endian_u(byte_array.slice(base_address + 92, base_address + 94)));
+        char["tmap"] = String(from_little_endian_u(byte_array.slice(base_address + 96, base_address + 98)));
+        char["cp"] = String(from_little_endian_u(byte_array.slice(base_address + 100, base_addres + 102)));
+        char["pwr"] = String(from_little_endian_u(byte_array.slice(base_address + 102, base_address + 104)));
+        char["def"] = String(from_little_endian_u(byte_array.slice(base_address + 104, base_address + 106)));
+        char["agl"] = String(from_little_endian_u(byte_array.slice(base_address + 106, base_address + 108)));
+        char["wis"] = String(from_little_endian_u(byte_array.slice(base_address + 108, base_address + 110)));
+        char["lrng"] = String(byte_array[base_address + 122])
+        char["cntr"] = String(byte_array[base_address + 123]);
+        char["crit"] = String(byte_array[base_address + 124]);
+        char["dodg"] = String(byte_array[base_address + 125]);
+        char["alrt"] = String(byte_array[base_address + 126])
+        char["hits"] = String(byte_array[base_address + 127]);
+        char["master"] = String(byte_array[base_address + 132]);
 
         char["res"] = [];
-        for (let j = 0; j < 9; j++)
-            char.res[j] = String(byte_array[base_address + 75 + j]);
+        for (let j = 0; j < 12; j++)
+            char.res[j] = String(byte_array[base_address + 110 + j]);
 
         char["eqp"] = [];
-        for (let j = 0; j < 6; j++)
+        for (let j = 0; j < 3; j++)
             char.eqp[j] = String(byte_array[base_address + 14 + j]);
 
         char["abil"] = [];
-        for (let j = 0; j < 4; j++)
+        char["skil"] = [];
+        for (let j = 0; j < 16; j++)
         {
-            char.abil[j] = [];
-            for (let k = 0; k < 10; k++)
-                char.abil[j][k] = String(byte_array[base_address + 92 + j * 10 + k]);
+            char["abil"] = String(byte_array[base_address + 30 + j]);
         }
-
-        char["sg"] = {};
-        let sgs = ["hp", "ap", "pwr", "def", "agl", "int"];
-        char.sg["lvl"] = String(from_little_endian_u([byte_array[base_address + 132]]));
-
-        for (let j = 0; j < 7; j++)
+        for (let j = 0; j < 10; j++)
         {
-            char["sg"][sgs[j]] = String(from_little_endian_s([byte_array[base_address + 133 + j]]));
+            char["abil"] = String(byte_array[base_address + 46 + j]);
         }
 
         char_array.push(char);

@@ -16,7 +16,6 @@ const item_array = [
     load_file("items/armor.txt").split("\n"),
     load_file("items/accs.txt").split("\n"),
     load_file("items/fishing.txt").split("\n"),
-    load_file("items/vitals.txt").split("\n"),
     load_file("items/abils.txt").split("\n")
 ]
 
