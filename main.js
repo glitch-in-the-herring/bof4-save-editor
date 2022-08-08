@@ -31,12 +31,6 @@ load_item_select([char_e.eqp[1]], item_array[2]);
 load_item_select([char_e.eqp[2]], item_array[3]);
 
 let li;
-for (let i = 0; i < 16; i++)
-{
-    li = document.createElement("li");
-    li.textContent = item_array[5][i];
-    inv_e.vital_info.appendChild(li);
-}
 
 for (let i = 0; i < 256; i++)
 {
@@ -79,7 +73,7 @@ function on_file_open()
         show_char_names(char_select, slots[0].chars);
         show_char(char_e, slots[0].chars[0]);
         show_inv(inv_e, slots[0].inv.inv[0]);
-        show_vital_and_skills(inv_e, char_e, slots[0].inv);
+        show_skills(inv_e, char_e, slots[0].inv);
         inv_e.inv_label.textContent = "Item";
         inv_e.inv_next_button.removeAttribute("disabled");
         show_party(party_e, slots[0]);
@@ -118,7 +112,7 @@ function prev_slot(e)
 {
     store_char(char_e, slots[char_e.cur.slot].chars[char_e.cur.char]);
     store_inv(inv_e, slots[inv_e.cur.slot].inv.inv[inv_e.cur.inv]);
-    store_vital_and_skills(inv_e, slots[inv_e.cur.slot].inv);
+    show_skills(inv_e, slots[inv_e.cur.slot].inv);
     store_party(party_e, slots[party_e.cur.slot].party);
     char_e.cur.char = 0;
     inv_e.cur.inv = 0;
@@ -133,7 +127,7 @@ function prev_slot(e)
     show_char_names(char_select, slots[char_e.cur.slot].chars);
     show_char(char_e, slots[char_e.cur.slot].chars[0]);
     show_inv(inv_e, slots[char_e.cur.slot].inv.inv[0]);
-    show_vital_and_skills(inv_e, char_e, slots[char_e.cur.slot].inv);
+    show_skills(inv_e, char_e, slots[char_e.cur.slot].inv);
     show_party(party_e, slots[party_e.cur.slot]);
     slot_pos_labels.forEach(x => x.textContent = "Slot " + String(char_e.cur.slot + 1) + " / " + String(addresses.length));
 }
@@ -142,7 +136,7 @@ function next_slot(e)
 {
     store_char(char_e, slots[char_e.cur.slot].chars[char_e.cur.char]);
     store_inv(inv_e, slots[inv_e.cur.slot].inv.inv[inv_e.cur.inv]);
-    store_vital_and_skills(inv_e, slots[inv_e.cur.slot].inv);
+    show_skills(inv_e, slots[inv_e.cur.slot].inv);
     store_party(party_e, slots[party_e.cur.slot].party);
     char_e.cur.char = 0;
     inv_e.cur.inv = 0;
@@ -157,7 +151,7 @@ function next_slot(e)
     show_char_names(char_select, slots[char_e.cur.slot].chars);
     show_char(char_e, slots[char_e.cur.slot].chars[0]);
     show_inv(inv_e, slots[char_e.cur.slot].inv.inv[0]);
-    show_vital_and_skills(inv_e, char_e, slots[char_e.cur.slot].inv);
+    show_skills(inv_e, char_e, slots[char_e.cur.slot].inv);
     show_party(party_e, slots[party_e.cur.slot]);    
     slot_pos_labels.forEach(x => x.textContent = "Slot " + String(char_e.cur.slot + 1) + " / " + String(addresses.length));    
 }

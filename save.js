@@ -2,7 +2,7 @@ function save_file(e)
 {
     store_char(e.target.char_e, e.target.slots[e.target.cur.slot].chars[e.target.cur.char]);
     store_inv(e.target.inv_e, e.target.slots[e.target.cur.slot].inv.inv[e.target.cur.inv]);
-    store_vital_and_skills(e.target.inv_e, e.target.slots[e.target.cur.slot].inv);
+    store_skills(e.target.inv_e, e.target.slots[e.target.cur.slot].inv);
     store_party(e.target.party_e, e.target.slots[e.target.cur.slot].party);
     for (let i = 0; i < e.target.slots.length; i++)
     {
@@ -116,9 +116,6 @@ function save_inv(byte_array, slot)
             byte_array[n_base_addr + j] = byte_safety_u(slot.inv.inv[i][j][1], 1);
         }
     }
-
-    for (let i = 0; i < 32; i++)
-        byte_array[base_addr + 1024 + i] = byte_safety_u(slot.inv.vital[i], 1);
 
     for (let i = 0; i < 128; i++)
         byte_array[base_addr + 1056 + i] = byte_safety_u(slot.inv.skill[i], 1);

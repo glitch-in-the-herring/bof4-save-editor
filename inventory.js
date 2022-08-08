@@ -1,8 +1,6 @@
 function get_inv_e()
 {
     const inv_list = document.getElementById("inv_list");
-    const vital_list = document.getElementById("vital_list");
-    const skill_list = document.getElementById("skill_list");
     const gene_tbl = document.getElementById("gene_table");
     const masters_tbl = document.getElementById("masters_table");   
 
@@ -50,26 +48,7 @@ function get_inv_e()
         select.classList.add("narrow");
 
         li.appendChild(select);
-        skill_list.appendChild(li);
         output["skill"][i] = select;
-    }
-
-    output["vital"] = [];
-    for (let i = 0; i < 32; i++)
-    {
-        li = document.createElement("li");
-        select = document.createElement("input");
-
-        select.setAttribute("type", "number");
-        select.setAttribute("min", "0");
-        select.setAttribute("max", "15");
-        select.setAttribute("disabled", "");
-        select.classList.add("disabled");
-        select.classList.add("narrow");
-
-        li.appendChild(select);
-        vital_list.appendChild(li);
-        output["vital"][i] = select;
     }
 
     output["genes"] = [];
@@ -142,7 +121,6 @@ function get_inv_e()
     output["inv_next_button"] = document.getElementById("inv_next_button");
     output["inv_label"] = document.getElementById("inv_type_indicator");
     output["inv_info"] = document.getElementById("inv_info");
-    output["vital_info"] = document.getElementById("vital_info");
     output["skill_info"] = document.getElementById("skill_info"); 
 
     return output;
@@ -173,11 +151,9 @@ function show_inv(inv_e, inv)
     }
 }
 
-function show_vital_and_skills(inv_e, char_e, inv)
+function show_skills(inv_e, char_e, inv)
 {
     inv_e.zenny.value = inv.zenny;
-    for (let i = 0; i < 32; i++)
-        inv_e.vital[i].value = inv.vital[i];
 
     for (let i = 0; i < 128; i++)
         inv_e.skill[i].value = inv.skill[i];
