@@ -22,7 +22,7 @@ function load_char(byte_array)
         char = {};
         base_address = 0x98 * i;
         char["name"] = ascii_decoder(byte_array.slice(base_address, base_address + 6));
-        char["lvl"] = String(byte_array[base_address + 8]);
+        char["lvl"] = String(byte_array[base_address + 10]);
         char["exp"] = String(from_little_endian_u(byte_array.slice(base_address + 12, base_address + 16)));
         char["chp"] = String(from_little_endian_u(byte_array.slice(base_address + 20, base_address + 22)));
         char["cap"] = String(from_little_endian_u(byte_array.slice(base_address + 24, base_address + 26)));

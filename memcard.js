@@ -25,7 +25,6 @@ function check_toc_entry(byte_array, current_address)
 
     for (let i = 0; i < 0x0E; i++)
     {       
-        console.log(byte_array[current_address + 0x0C + i] + " comparaed to " + code_US[i].charCodeAt() + " and " + code_EU[i].charCodeAt())
         if (byte_array[current_address + 0x0C + i] != code_US[i].charCodeAt() 
             && byte_array[current_address + 0x0C + i] != code_EU[i].charCodeAt())
             return false;

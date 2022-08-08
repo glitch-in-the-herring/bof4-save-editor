@@ -113,7 +113,7 @@ function get_party_list(chars)
 function show_char_names(select, chars)
 {
     select.textContent = "";
-    for (let i = 0; i < 8; i++)
+    for (let i = 0; i < 7; i++)
         select.innerHTML += "<option value=\"" + i.toString()  + "\">" + chars[i].name +  "</option>\n";
 }
 
