@@ -127,13 +127,6 @@ function show_char(char_e, char)
         char_e.stat[index].value = char[index.split("_")[1]];
     }
 
-    key = Object.keys(char_e.sg);
-    for (let i = 0; i < key.length; i++)
-    {
-        index = key[i];
-        char_e.sg[index].value = char.sg[index.split("_")[2]];
-    }
-
     show_parts(char_e.res, char.res);
     show_parts(char_e.eqp, char.eqp);
     show_parts(char_e.abil, char.abil[0]);
