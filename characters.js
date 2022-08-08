@@ -33,12 +33,6 @@ function get_char_e()
 
     output["eqp"] = eqp_e;
 
-    let sg = {};
-    for (let i = 0; i < sg_e.length; i++)
-        sg[String(sg_e[i].id)] = sg_e[i];
-
-    output["sg"] = sg;
-
     //abilities
     let abil_list = document.getElementById("abil_list");
     let select;
