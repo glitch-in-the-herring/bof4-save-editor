@@ -49,7 +49,7 @@ function load_char(byte_array)
 
         char["eqp"] = [];
         for (let j = 0; j < 3; j++)
-            char.eqp[j] = String(byte_array[base_address + 14 + j]);
+            char.eqp[j] = String(byte_array[base_address + 128 + j]);
 
         char["abil"] = [];
         char["skil"] = [];
