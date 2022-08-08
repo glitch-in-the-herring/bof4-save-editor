@@ -30,7 +30,7 @@ function load_char(byte_array)
         char["cmap"] = String(from_little_endian_u(byte_array.slice(base_address + 60, base_address + 62)));
         char["tmhp"] = String(from_little_endian_u(byte_array.slice(base_address + 92, base_address + 94)));
         char["tmap"] = String(from_little_endian_u(byte_array.slice(base_address + 96, base_address + 98)));
-        char["cp"] = String(from_little_endian_u(byte_array.slice(base_address + 100, base_addres + 102)));
+        char["cp"] = String(from_little_endian_u(byte_array.slice(base_address + 100, base_address + 102)));
         char["pwr"] = String(from_little_endian_u(byte_array.slice(base_address + 102, base_address + 104)));
         char["def"] = String(from_little_endian_u(byte_array.slice(base_address + 104, base_address + 106)));
         char["agl"] = String(from_little_endian_u(byte_array.slice(base_address + 106, base_address + 108)));
