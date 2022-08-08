@@ -27,8 +27,8 @@ inv_e["cur"] = cur;
 party_e["cur"] = cur;
 
 load_item_select([char_e.eqp[0]], item_array[1]);
-load_item_select([char_e.eqp[1], char_e.eqp[2], char_e.eqp[3]], item_array[2]);
-load_item_select([char_e.eqp[4], char_e.eqp[5]], item_array[3]);
+load_item_select([char_e.eqp[1]], item_array[2]);
+load_item_select([char_e.eqp[2]], item_array[3]);
 
 let li;
 for (let i = 0; i < 16; i++)
@@ -38,10 +38,10 @@ for (let i = 0; i < 16; i++)
     inv_e.vital_info.appendChild(li);
 }
 
-for (let i = 0; i < 228; i++)
+for (let i = 0; i < 256; i++)
 {
     li = document.createElement("li");
-    li.textContent = item_array[6][i];
+    li.textContent = item_array[5][i];
     inv_e.skill_info.appendChild(li);
 }
 

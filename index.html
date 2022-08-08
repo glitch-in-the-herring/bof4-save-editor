@@ -9,7 +9,7 @@
         <script src="save.js"></script>
         <script src="characters.js"></script>
         <script src="inventory.js"></script>
-        <script src="counter.js"></script>        
+        <script src="counter.js"></script>
         <link href="main.css" rel="stylesheet">
         <title>Breath of Fire IV Save Editor</title>
     </head>
@@ -112,18 +112,12 @@
                     <h3>Equipment</h3>
                     <label for="character_eqp_weapon"><img src="img/items/weapon.png" height=16> Weapon</label>
                     <select name="character_eqp_weapon" id="character_eqp_weapon" class="disabled" autocomplete="off" disabled></select>
-                    <label for="character_eqp_shield"><img src="img/items/shield.png" height=16> Shield</label>
-                    <select name="character_eqp_shield" id="character_eqp_shield" class="disabled" autocomplete="off" disabled></select>            
                     <br/>
-                    <label for="character_eqp_helm"><img src="img/items/helm.png" height=16> Helm</label>
-                    <select name="character_eqp_helm" id="character_eqp_helm" class="disabled" autocomplete="off" disabled></select>
-                    <label for="character_eqp_armor"><img src="img/items/armor.png" height=16> Armor</label>
-                    <select name="character_eqp_armor" id="character_eqp_armor" class="disabled" autocomplete="off" disabled></select>
+                    <label for="character_eqp_shield"><img src="img/items/shield.png" height=16> Armor</label>
+                    <select name="character_eqp_shield" id="character_eqp_shield" class="disabled" autocomplete="off" disabled></select>
                     <br/>
-                    <label for="character_eqp_acc1"><img src="img/items/accessory.png" height=16> Accessory 1</label>
-                    <select name="character_eqp_acc1" id="character_eqp_acc1" class="disabled" autocomplete="off" disabled></select>
-                    <label for="character_eqp_acc2"><img src="img/items/accessory.png" height=16> Accessory 2</label>
-                    <select name="character_eqp_acc2" id="character_eqp_acc2" class="disabled" autocomplete="off" disabled></select>
+                    <label for="character_eqp_acc"><img src="img/items/accessory.png" height=16> Accessory</label>
+                    <select name="character_eqp_acc" id="character_eqp_acc2" class="disabled" autocomplete="off" disabled></select>
                 </div>
                 <div class="grid-item">
                     <h3>Abilities</h3>
@@ -132,25 +126,6 @@
                 </div>
                 <div class="grid-item">
                     <h3>Stat Growth Modifier</h3>
-                    <div id="character_sg">
-                        <label for="character_sg_hp">HP increase</label>
-                        <input type="number" name="character_sg_hp" id="character_sg_hp" class="disabled narrow" autocomplete="off" min=-128 max=127 disabled>
-                        <label for="character_sg_ap">AP increase</label>
-                        <input type="number" name="character_sg_ap" id="character_sg_ap" class="disabled narrow" autocomplete="off" min=-128 max=127 disabled>
-                        <br/>
-                        <label for="character_sg_pwr">PWR increase</label>
-                        <input type="number" name="character_sg_pwr" id="character_sg_pwr" class="disabled narrow" autocomplete="off" min=-128 max=127 disabled>
-                        <label for="character_sg_def">DEF increase</label>
-                        <input type="number" name="character_sg_def" id="character_sg_def" class="disabled narrow" autocomplete="off" min=-128 max=127 disabled>
-                        <br/>
-                        <label for="character_sg_agl">AGL increase</label>
-                        <input type="number" name="character_sg_agl" id="character_sg_agl" class="disabled narrow" autocomplete="off" min=-128 max=127 disabled>
-                        <label for="character_sg_int">INT increase</label>
-                        <input type="number" name="character_sg_int" id="character_sg_int" class="disabled narrow" autocomplete="off" min=-128 max=127 disabled>
-                        <br/>
-                        <label for="character_sg_lvl">Apprenticing level</label>
-                        <input type="number" name="character_sg_lvl" id="character_sg_lvl" class="disabled narrow" autocomplete="off" min=0 max=255 disabled>
-                    </div>
                     <label for="character_sg_master">Master</label>
                     <select name="character_sg_master" id="character_sg_master" class="disabled" autocomplete="off" disabled>
                     </select>
@@ -216,6 +191,7 @@
                     </div>
                 </div>          
             </div>
+            <!--
             <br/>
             <h2>Party Formation</h2>
             <div class="grid-container3">
@@ -253,15 +229,15 @@
                     <label for="battle_c_2"># of Battles (2)</label>
                     <input type="number" id="battle_c_2" class="disabled" name="battle_c_2" disabled>                 
                 </div>
-            </div>
+            </div>-->
             <label for="slot_prev_button">Prev</label> <button class="slot_prev_button" disabled><</button> <label class="slot_position_indicator">Slot ... / ...</label> <button class="slot_next_button" disabled>></button> <label for="slot_next_button">Next</label>
             <br/>
             <br/>
             <button class="disabled save_button" disabled>Save</button>
         </div>
-        <div id="loading">
+        <!--<div id="loading">
             Loading...
-        </div>
+        </div>-->
         <p><a href="info.html">Info</a><br/>
             Special thanks goes to to ZC_Liu from GameFAQs for his <a href="https://gamefaqs.gamespot.com/ps/196818-breath-of-fire-iv/faqs/12971">Breath of Fire IV Enemy and Information Guide</a> and <a href="https://gamefaqs.gamespot.com/ps/196817-breath-of-fire-iii/faqs/30733">Breath of Fire III Secrets FAQ</a>, both of which helped a lot with finding the hidden stats.
         <script src="main.js"></script>

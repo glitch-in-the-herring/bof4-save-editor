@@ -33,12 +33,6 @@ function get_char_e()
 
     output["eqp"] = eqp_e;
 
-    const sg_e = Array.from(document.getElementById("character_sg").childNodes).filter(function(x) 
-    {
-        let string_id = String(x.id);
-        return string_id.startsWith("character_sg");
-    });
-
     let sg = {};
     for (let i = 0; i < sg_e.length; i++)
         sg[String(sg_e[i].id)] = sg_e[i];
