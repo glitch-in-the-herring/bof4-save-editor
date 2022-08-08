@@ -57,7 +57,7 @@ function get_char_e()
         select = document.createElement("select");
         select.classList.add("disabled");
         select.setAttribute("disabled", "");
-        load_item_select([select], item_array[6]);
+        load_item_select([select], item_array[5]);
         li.appendChild(select);
         abil_list.appendChild(li);
         abil[j] = select;
