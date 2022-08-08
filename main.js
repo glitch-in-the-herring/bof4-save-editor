@@ -24,7 +24,7 @@ let inv_e = get_inv_e();
 let counter_e = get_counter_e();*/
 char_e["cur"] = cur;
 inv_e["cur"] = cur;
-party_e["cur"] = cur;
+//party_e["cur"] = cur;
 
 load_item_select([char_e.eqp[0]], item_array[1]);
 load_item_select([char_e.eqp[1]], item_array[2]);
