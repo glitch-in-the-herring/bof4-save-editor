@@ -76,7 +76,7 @@ function on_file_open()
         show_skills(inv_e, char_e, slots[0].inv);
         inv_e.inv_label.textContent = "Item";
         inv_e.inv_next_button.removeAttribute("disabled");
-        show_party(party_e, slots[0]);
+        //show_party(party_e, slots[0]);
 
         if (addresses.length > 1)
             next_buttons.forEach(x => x.removeAttribute("disabled"));
