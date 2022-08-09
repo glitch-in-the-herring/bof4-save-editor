@@ -156,38 +156,6 @@ function next_slot(e)
     slot_pos_labels.forEach(x => x.textContent = "Slot " + String(char_e.cur.slot + 1) + " / " + String(addresses.length));    
 }
 
-function prev_abil(e)
-{
-    store_char(char_e, slots[char_e.cur.slot].chars[char_e.cur.char]);    
-    if (char_e.cur.abil == 3)
-        char_e.abil_next_button.removeAttribute("disabled");
-
-    char_e.cur.abil--;
-    char_e.abil_label.textContent = abil_cat[char_e.cur.abil];
-
-    if (char_e.cur.abil == 0)
-        e.target.setAttribute("disabled", "");
-
-    for (let i = 0; i < 10; i++)
-        char_e.abil[i].value = slots[char_e.cur.slot].chars[char_e.cur.char].abil[char_e.cur.abil][i];
-}
-
-function next_abil(e)
-{
-    store_char(char_e, slots[char_e.cur.slot].chars[char_e.cur.char]);    
-    if (char_e.cur.abil == 0)
-        char_e.abil_prev_button.removeAttribute("disabled");
-
-    char_e.cur.abil++;
-    char_e.abil_label.textContent = abil_cat[char_e.cur.abil];    
-
-    if (char_e.cur.abil == 3)
-        e.target.setAttribute("disabled", "");
-
-    for (let i = 0; i < 10; i++)
-        char_e.abil[i].value = slots[char_e.cur.slot].chars[char_e.cur.char].abil[char_e.cur.abil][i];
-}
-
 function prev_inv(e)
 {
     store_inv(inv_e, slots[inv_e.cur.slot].inv.inv[inv_e.cur.inv]);
@@ -234,8 +202,6 @@ upload_input.addEventListener("change", on_file_open, false);
 char_select.addEventListener("change", on_character_change, false);
 prev_buttons.forEach(x => x.addEventListener("click", prev_slot, false));
 next_buttons.forEach(x => x.addEventListener("click", next_slot, false));
-char_e.abil_prev_button.addEventListener("click", prev_abil, false);
-char_e.abil_next_button.addEventListener("click", next_abil, false);
 inv_e.inv_prev_button.addEventListener("click", prev_inv, false);
 inv_e.inv_next_button.addEventListener("click", next_inv, false);
 
