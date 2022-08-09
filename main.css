@@ -30,6 +30,13 @@
     grid-column-gap: 10px;  
 }
 
+.grid-container4
+{
+    display: grid;
+    grid-template-columns: 250px 250px;
+    grid-column-gap: 10px;  
+}
+
 .rowspan2
 {
     grid-row: 1 / span 2;
