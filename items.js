@@ -50,8 +50,7 @@ const gene_names =
 
 const masters =
 [
-    "Bunyan", "Mygas", "Yggdrasil", "D'lonzo",
-    "Fahl", "Durandal", "Giotto", "Hondara",
-    "Emitai", "Deis", "Hachio", "Bais",
-    "Lang", "Lee", "Wynn", "Ladon", "Meryleep"
+    "Rwolf", "Momo", "Kryrik", "Abbess",
+    "Njomo", "Gyosil", "Stoll", "Stoll",
+    "Una", "Bunyan", "Lyta", "Khan", "Marlok"
 ];
