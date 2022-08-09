@@ -129,13 +129,6 @@ function store_char(char_e, char)
         char[index.split("_")[1]] = char_e.stat[index].value;
     }
 
-    key = Object.keys(char_e.sg);
-    for (let i = 0; i < key.length; i++)
-    {
-        index = key[i];
-        char.sg[index.split("_")[2]] = char_e.sg[index].value;
-    }
-
     store_parts(char_e.res, char.res);
     store_parts(char_e.eqp, char.eqp);
     store_parts(char_e.abil, char.abil[char_e.cur.abil]);   

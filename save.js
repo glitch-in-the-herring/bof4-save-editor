@@ -88,14 +88,6 @@ function save_char(byte_array, slot)
             for (let k = 0; k < 10; k++)
                 byte_array[base_addr + 92 + j * 10 + k] = byte_safety_u(slot.chars[i].abil[j][k], 1); 
         }
-
-        byte_array[base_addr + 132] = slot.chars[i].sg["lvl"];
-
-        let key = ["hp", "ap", "pwr", "def", "agl", "int"];
-        for (let j = 0; j < key.length; j++)
-        {
-            byte_array[base_addr + 133 + j] = byte_safety_s(slot.chars[i].sg[key[j]], 1);
-        }
     }
 }
 
