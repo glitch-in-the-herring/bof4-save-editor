@@ -35,9 +35,11 @@ function get_char_e()
 
     //abilities
     let abil_list = document.getElementById("abil_list");
+    let skil_list = document.getElementById("skil_list");
     let select;
     let li;
     let abil = [];
+    let skil = [];
 
     for (let j = 0; j < 16; j++)
     {
@@ -50,8 +52,20 @@ function get_char_e()
         abil_list.appendChild(li);
         abil[j] = select;
     }
+    for (let j = 0; j < 10; j++)
+    {
+        li = document.createElement("li");
+        select = document.createElement("select");
+        select.classList.add("disabled");
+        select.setAttribute("disabled", "");
+        load_item_select([select], item_array[5]);
+        li.appendChild(select);
+        skil_list.appendChild(li);
+        skil[j] = select;
+    }
 
     output["abil"] = abil;
+    output["skil"] = skil;
     let masters_e = document.getElementById("character_sg_master");
     masters_e.setAttribute("disabled", "");
     masters_e.classList.add("disabled");
@@ -126,7 +140,8 @@ function show_char(char_e, char)
 
     show_parts(char_e.res, char.res);
     show_parts(char_e.eqp, char.eqp);
-    show_parts(char_e.abil, char.abil[0]);
+    show_parts(char_e.abil, char.abil);
+    show_parts(char_e.skil, char.skil);
 
     char_e.cur.abil = 0;
     char_e.master.value = char.master;
