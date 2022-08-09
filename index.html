@@ -128,7 +128,6 @@
                 </div>
                 <div class="grid-item">
                     <h3>Abilities</h3>
-                    <button id="abil_prev_button" type="button" disabled><</button> <label id="abil_type_indicator"></label> <button id="abil_next_button" type="button" disabled>></button>
                     <ol id="abil_list"></ol>
                 </div>
                 <div class="grid-item">
@@ -144,6 +143,8 @@
                 <div class="grid-item colspan4">
                     <label for="inv_zenny">Zenny:</label>
                     <input type="number" name="inv_zenny" id="inv_zenny" class="disabled" autocomplete="off" min=0 max=4294967295 disabled>
+                    <label for="inv_gp">Game Points:</label>
+                    <input type="number" name="inv_gp" id="inv_gp" class="disabled" autocomplete="off" min=0 max=4294967295 disabled>
                 </div>
                 <div class="grid-item">
                     <h3>Items</h3>
@@ -160,14 +161,14 @@
                     </div>
                 </div>
                 <div class="grid-item">
-                    <h3>Skill Note</h3>
+                    <h3>Skill list</h3>
                     <div class="overflow">
                         <ol start="0" id="skill_info">
                         </ol>
                     </div>
                 </div>
                 <div class="grid-item">
-                    <h3>Dragon genes</h3>
+                    <h3>Dragon forms</h3>
                     <div class="overflow">
                         <table id="gene_table">
                         </table>

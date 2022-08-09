@@ -39,7 +39,7 @@ function get_char_e()
     let li;
     let abil = [];
 
-    for (let j = 0; j < 10; j++)
+    for (let j = 0; j < 16; j++)
     {
         li = document.createElement("li");
         select = document.createElement("select");
@@ -52,16 +52,13 @@ function get_char_e()
     }
 
     output["abil"] = abil;
-    output["abil_label"] = document.getElementById("abil_type_indicator");
-    output["abil_prev_button"] = document.getElementById("abil_prev_button");
-    output["abil_next_button"] = document.getElementById("abil_next_button");
     let masters_e = document.getElementById("character_sg_master");
     masters_e.setAttribute("disabled", "");
     masters_e.classList.add("disabled");
     output["master"] = masters_e;
     output["masters_opt"] = [];
 
-    for (let j = 0; j < 17; j++)
+    for (let j = 0; j < 13; j++)
     {
         select = document.createElement("option");
         select.textContent = masters[j];

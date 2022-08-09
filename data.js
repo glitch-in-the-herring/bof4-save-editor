@@ -55,10 +55,12 @@ function load_char(byte_array)
         char["skil"] = [];
         for (let j = 0; j < 16; j++)
         {
+            console.log(String(byte_array[base_address + 30 + j]));
             char["abil"] = String(byte_array[base_address + 30 + j]);
         }
         for (let j = 0; j < 10; j++)
         {
+            String(byte_array[base_address + 46 + j])
             char["abil"] = String(byte_array[base_address + 46 + j]);
         }
 
