@@ -4,7 +4,6 @@ const next_buttons = Array.from(document.getElementsByClassName("slot_next_butto
 const slot_pos_labels = Array.from(document.getElementsByClassName("slot_position_indicator"));
 const disabled_elements = document.getElementsByClassName("disabled");
 const char_select = document.getElementById("character_select");
-const abil_cat = ["Abilities", "Skills"];
 const inv_cat = ["Item", "Weapon", "Armor", "Option"];
 
 let filename;
