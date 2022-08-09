@@ -173,7 +173,7 @@ function show_skills(inv_e, char_e, inv)
     }
 
     let master_group;
-    for (let i = 0; i < 17; i++)
+    for (let i = 0; i < 13; i++)
     {
         master_group = i >> 3;
         if (inv.masters[master_group] & (0b1 << (i % 8)))
