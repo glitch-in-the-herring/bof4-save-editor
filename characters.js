@@ -129,8 +129,6 @@ function show_char(char_e, char)
     show_parts(char_e.abil, char.abil[0]);
 
     char_e.cur.abil = 0;
-    char_e.abil_prev_button.setAttribute("disabled", "");
-    char_e.abil_next_button.removeAttribute("disabled");
     char_e.abil_label.innerHTML = "Heal";
     char_e.master.value = char.master;
 }
