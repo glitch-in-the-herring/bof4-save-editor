@@ -72,11 +72,11 @@ function load_inv(byte_array)
     {
         base_addr = 512 * i;
         inv.inv[i] = [];
-        for (let j = 0; j < 256; j += 2)
+        for (let j = 0; j < 128; j++)
         {
             inv.inv[i][j] = [];
-            inv.inv[i][j][0] = String(byte_array[base_addr + j]);
-            inv.inv[i][j][1] = String(byte_array[base_addr + j + 1]);
+            inv.inv[i][j][0] = String(byte_array[base_addr + j * 2]);
+            inv.inv[i][j][1] = String(byte_array[base_addr + j * 2 + 1]);
         }
     }
 
