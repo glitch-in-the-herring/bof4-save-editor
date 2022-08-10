@@ -4,8 +4,9 @@ function load_slot(byte_array, address)
 
     slot["addr"] = address;
     slot["chars"] = load_char(byte_array.slice(address + 0x180, address + 0x5A7));
-    slot["inv"] = load_inv(byte_array.slice(address + 0x974, address + 0xe9f));
-    slot["inv"].zenny = String(from_little_endian_u(byte_array.slice(address + 0x878, address + 0x87c)));
+    slot["inv"] = load_inv(byte_array.slice(address + 0x5cc, address + 0xdcb));
+    slot["inv"].zenny = String(from_little_endian_u(byte_array.slice(address + 0x5b4, address + 0x5b8)));
+    slot["inv"].zenny = String(from_little_endian_u(byte_array.slice(address + 0xf98, address + 0xf9c)));
     slot["party"] = load_party(byte_array.slice(address + 0x882, address + 0x888));
 
     return slot;
@@ -63,21 +64,19 @@ function load_char(byte_array)
 function load_inv(byte_array)
 {
     let inv = {};
-    let id_base_addr;
-    let n_base_addr;
+    let base_addr;
 
     inv["inv"] = [];
 
     for (let i = 0; i < 4; i++)
     {
-        id_base_addr = 128 * i;
-        n_base_addr = 512 + id_base_addr
+        base_addr = 512 * i;
         inv.inv[i] = [];
-        for (let j = 0; j < 128; j++)
+        for (let j = 0; j < 256; j += 2)
         {
             inv.inv[i][j] = [];
-            inv.inv[i][j][0] = String(byte_array[id_base_addr + j]);
-            inv.inv[i][j][1] = String(byte_array[n_base_addr + j]);
+            inv.inv[i][j][0] = String(byte_array[base_addr + j]);
+            inv.inv[i][j][1] = String(byte_array[base_addr + j + 1]);
         }
     }
 
