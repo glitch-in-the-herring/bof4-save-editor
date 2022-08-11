@@ -81,8 +81,8 @@ function load_inv(byte_array)
     }
 
     inv["skill"] = [];
-    for (let i = 0; i < 128; i++)
-        inv["skill"][i] = String(byte_array[1056 + i]);
+    for (let i = 0; i < 10; i++)
+        inv["skill"][i] = String(byte_array[3580 + i]);
 
     inv["genes"] = [];
     for (let i = 0; i < 3; i++)
@@ -139,8 +139,15 @@ function store_skills(inv_e, inv)
 {
     inv.zenny = inv_e.zenny.value;
 
-    for (let i = 0; i < 128; i++)
-        inv.skill[i] = inv_e.skill[i].value;
+    let skill_group;
+    for (let i = 0; i < 10; i++)
+    {
+        skill_group = i >> 3;
+        if (inv_e.skills[i].checked)
+            inv.skills[skill_group] = inv.skills[skill_group] | (0b1 << (i % 8));
+        else
+            inv.skills[skill_group] = inv.skills[skill_group] & (logical_not(0b1 << (i % 8), 1));
+    }
 
     let gene_group;
     for (let i = 0; i < 18; i++)

@@ -1,12 +1,12 @@
 function get_inv_e()
 {
     const inv_list = document.getElementById("inv_list");
+    const skill_list = document.getElementById("skill_list");
     const gene_tbl = document.getElementById("gene_table");
     const masters_tbl = document.getElementById("masters_table");   
 
     let output = {};
     output["inv"] = [];
-    output["skill"] = [];
     let select;
     let tbox;
     let li;
@@ -36,25 +36,32 @@ function get_inv_e()
         inv_list.appendChild(li);        
         output["inv"][i][0] = select;
         output["inv"][i][1] = tbox;
+    }
 
-        li = document.createElement("li");
+    output["skill"] = [];
+    let label;
+    for (let i = 0; i < 76; i++)
+    {
         select = document.createElement("input");
-
-        select.setAttribute("type", "number");
-        select.setAttribute("min", "0");
-        select.setAttribute("max", "227");
+        label = document.createElement("label");
         select.setAttribute("disabled", "");
+        select.setAttribute("type", "checkbox");
+        select.setAttribute("value", i);
         select.classList.add("disabled");
-        select.classList.add("narrow");
 
-        li.appendChild(select);
-        output["skill"][i] = select;
+        output["skill"].push(select);
+
+        //label.setAttribute("for", "master_" + masters[i]);
+        label.textContent = item_array[5][i + 84];
+        masters_tbl.appendChild(select);
+        masters_tbl.appendChild(label);
+        br = document.createElement("br");
+        masters_tbl.appendChild(br);
     }
 
     output["genes"] = [];
     let name_d;
     let img;
-    let label;
     for (let i = 0; i < 6; i++)
     {
         li = document.createElement("tr");
@@ -121,7 +128,6 @@ function get_inv_e()
     output["inv_next_button"] = document.getElementById("inv_next_button");
     output["inv_label"] = document.getElementById("inv_type_indicator");
     output["inv_info"] = document.getElementById("inv_info");
-    output["skill_info"] = document.getElementById("skill_info"); 
 
     return output;
 }
@@ -155,8 +161,19 @@ function show_skills(inv_e, char_e, inv)
 {
     inv_e.zenny.value = inv.zenny;
 
-    for (let i = 0; i < 128; i++)
-        inv_e.skill[i].value = inv.skill[i];
+    let skill_group;
+    for (let i = 0; i < 10; i++)
+    {
+        skill_group = i >> 3;
+        if (inv.skills[skill_group] & (0b1 << (i % 8)))
+        {
+            inv_e["skills"][i].checked = true;
+        }
+        else
+        {
+            inv_e["skills"][i].checked = true;
+        }
+    }
 
     let gene_group;
     for (let i = 0; i < 18; i++)

@@ -31,13 +31,6 @@ load_item_select([char_e.eqp[2]], item_array[3]);
 
 let li;
 
-for (let i = 0; i < 256; i++)
-{
-    li = document.createElement("li");
-    li.textContent = item_array[5][i];
-    inv_e.skill_info.appendChild(li);
-}
-
 function on_file_open()
 {
     const reader = new FileReader();
