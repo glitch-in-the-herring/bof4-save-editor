@@ -104,7 +104,7 @@ function prev_slot(e)
 {
     store_char(char_e, slots[char_e.cur.slot].chars[char_e.cur.char]);
     store_inv(inv_e, slots[inv_e.cur.slot].inv.inv[inv_e.cur.inv]);
-    show_skills(inv_e, slots[inv_e.cur.slot].inv);
+    store_skills(inv_e, slots[inv_e.cur.slot].inv);
     store_party(party_e, slots[party_e.cur.slot].party);
     char_e.cur.char = 0;
     inv_e.cur.inv = 0;
@@ -128,7 +128,7 @@ function next_slot(e)
 {
     store_char(char_e, slots[char_e.cur.slot].chars[char_e.cur.char]);
     store_inv(inv_e, slots[inv_e.cur.slot].inv.inv[inv_e.cur.inv]);
-    show_skills(inv_e, slots[inv_e.cur.slot].inv);
+    store_skills(inv_e, slots[inv_e.cur.slot].inv);
     store_party(party_e, slots[party_e.cur.slot].party);
     char_e.cur.char = 0;
     inv_e.cur.inv = 0;
