@@ -109,13 +109,7 @@ function get_party_list(chars)
 {
     let party_list = [];
 
-    for (let i = 0; i < 2; i++)
-    {
-        party_list[i] = "Child " + chars[i].name;
-        party_list[i + 7] = "Adult " + chars[i].name;
-    }
-
-    for (let i = 2; i < 7; i++)
+    for (let i = 0; i < 6; i++)
         party_list[i] = chars[i].name;
 
     return party_list;
