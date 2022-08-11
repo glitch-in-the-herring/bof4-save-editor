@@ -4,7 +4,7 @@ function load_slot(byte_array, address)
 
     slot["addr"] = address;
     slot["chars"] = load_char(byte_array.slice(address + 0x180, address + 0x5A7));
-    slot["inv"] = load_inv(byte_array.slice(address + 0x5cc, address + 0xdcb));
+    slot["inv"] = load_inv(byte_array.slice(address + 0x5cc, address + 0xe06));
     slot["inv"].zenny = String(from_little_endian_u(byte_array.slice(address + 0x5b4, address + 0x5b8)));
     slot["inv"].zenny = String(from_little_endian_u(byte_array.slice(address + 0xf98, address + 0xf9c)));
     slot["party"] = load_party(byte_array.slice(address + 0x882, address + 0x888));
@@ -80,9 +80,9 @@ function load_inv(byte_array)
         }
     }
 
-    inv["skill"] = [];
+    inv["skills"] = [];
     for (let i = 0; i < 10; i++)
-        inv["skill"][i] = String(byte_array[3580 + i]);
+        inv["skills"][i] = byte_array[2096 + i];
 
     inv["genes"] = [];
     for (let i = 0; i < 3; i++)
