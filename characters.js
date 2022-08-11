@@ -109,7 +109,7 @@ function get_party_list(chars)
 {
     let party_list = [];
 
-    for (let i = 0; i < 6; i++)
+    for (let i = 0; i < 7; i++)
         party_list[i] = chars[i].name;
 
     return party_list;
@@ -162,7 +162,7 @@ function show_party(party_e, slot)
         party_e["out"][i].innerHTML = "";
     }
 
-    load_item_select(party_e["in"].concat(party_e["out"]), party_list);
+    load_item_select(concat(party_e["out"]), party_list);
 
     for (let i = 0; i < 6; i++)
     {
