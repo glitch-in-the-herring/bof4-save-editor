@@ -53,10 +53,10 @@ function get_inv_e()
 
         //label.setAttribute("for", "master_" + masters[i]);
         label.textContent = item_array[5][i + 84];
-        masters_tbl.appendChild(select);
-        masters_tbl.appendChild(label);
+        skill_list.appendChild(select);
+        skill_list.appendChild(label);
         br = document.createElement("br");
-        masters_tbl.appendChild(br);
+        skill_list.appendChild(br);
     }
 
     output["genes"] = [];
