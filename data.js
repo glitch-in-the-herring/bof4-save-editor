@@ -159,7 +159,7 @@ function store_skills(inv_e, inv)
             inv.genes[gene_group] = inv.genes[gene_group] & (logical_not(0b1 << (i % 8), 1));
     }
 
-    for (let i = 0; i < 17; i++)
+    for (let i = 0; i < 13; i++)
     {
         master_group = i >> 3;
         if (inv_e.masters[i].checked)
