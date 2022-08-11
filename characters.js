@@ -96,10 +96,10 @@ function get_party_e()
     let editor = document.getElementById("party_editor");
     output["in"] = [];
     output["out"] = [];
-    for (let i = 0; i < 3; i++)
+    for (let i = 0; i < 6; i++)
     {
-        output["in"][i] = document.getElementById("party_in_" + String(i + 1));
-        output["out"][i] = document.getElementById("party_out_" + String(i + 1));
+        output["in"][i] = document.getElementById("party_in_" + String(i));
+        output["out"][i] = document.getElementById("party_out_" + String(i));
     }
 
     return output;
@@ -162,7 +162,7 @@ function show_party(party_e, slot)
 {
     party_list = get_party_list(slot.chars);
 
-    for (let i = 0; i < 3; i++)
+    for (let i = 0; i < 6; i++)
     {
         party_e["in"][i].innerHTML = "";
         party_e["out"][i].innerHTML = "";
@@ -170,11 +170,11 @@ function show_party(party_e, slot)
 
     load_item_select(party_e["in"].concat(party_e["out"]), party_list);
 
-    for (let i = 0; i < 3; i++)
+    for (let i = 0; i < 6; i++)
     {
         party_e["in"][i].innerHTML += "<option value=\"255\">--</option>";
         party_e["out"][i].innerHTML += "<option value=\"255\">--</option>";        
         party_e["in"][i].value = slot.party.in[i];
-        party_e["out"][i].value = slot.party.out[i];      
+        //party_e["out"][i].value = slot.party.out[i];      
     }
 }

@@ -19,11 +19,11 @@ let cur = {
 };
 let char_e = get_char_e();
 let inv_e = get_inv_e();
-/*let party_e = get_party_e();
-let counter_e = get_counter_e();*/
+let party_e = get_party_e();
+//let counter_e = get_counter_e();
 char_e["cur"] = cur;
 inv_e["cur"] = cur;
-//party_e["cur"] = cur;
+party_e["cur"] = cur;
 
 load_item_select([char_e.eqp[0]], item_array[1]);
 load_item_select([char_e.eqp[1]], item_array[2]);
@@ -68,7 +68,7 @@ function on_file_open()
         show_skills(inv_e, char_e, slots[0].inv);
         inv_e.inv_label.textContent = "Item";
         inv_e.inv_next_button.removeAttribute("disabled");
-        //show_party(party_e, slots[0]);
+        show_party(party_e, slots[0]);
 
         if (addresses.length > 1)
             next_buttons.forEach(x => x.removeAttribute("disabled"));
@@ -83,7 +83,7 @@ function on_file_open()
             x.filename = filename;
             x.char_e = char_e;
             x.inv_e = inv_e;
-            //x.party_e = party_e;
+            x.party_e = party_e;
             //x.counter_e = counter_e;
             x.cur = cur;
         });
