@@ -38,7 +38,7 @@ function get_inv_e()
         output["inv"][i][1] = tbox;
     }
 
-    output["skill"] = [];
+    output["skills"] = [];
     let label;
     for (let i = 0; i < 76; i++)
     {
@@ -49,7 +49,7 @@ function get_inv_e()
         select.setAttribute("value", i);
         select.classList.add("disabled");
 
-        output["skill"].push(select);
+        output["skills"].push(select);
 
         //label.setAttribute("for", "master_" + masters[i]);
         label.textContent = item_array[5][i + 84];
