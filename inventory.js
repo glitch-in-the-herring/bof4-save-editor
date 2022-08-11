@@ -162,7 +162,7 @@ function show_skills(inv_e, char_e, inv)
     inv_e.zenny.value = inv.zenny;
 
     let skill_group;
-    for (let i = 0; i < 10; i++)
+    for (let i = 0; i < 76; i++)
     {
         skill_group = i >> 3;
         if (inv.skills[skill_group] & (0b1 << (i % 8)))

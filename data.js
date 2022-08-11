@@ -140,7 +140,7 @@ function store_skills(inv_e, inv)
     inv.zenny = inv_e.zenny.value;
 
     let skill_group;
-    for (let i = 0; i < 10; i++)
+    for (let i = 0; i < 76; i++)
     {
         skill_group = i >> 3;
         if (inv_e.skills[i].checked)
