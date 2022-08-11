@@ -171,7 +171,7 @@ function show_skills(inv_e, char_e, inv)
         }
         else
         {
-            inv_e["skills"][i].checked = true;
+            inv_e["skills"][i].checked = false;
         }
     }
 
