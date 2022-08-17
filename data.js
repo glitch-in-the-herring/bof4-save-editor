@@ -103,8 +103,8 @@ function load_party(byte_array)
 
     for (let i = 0; i < 6; i++)
     {
-        party.out[i] = String(byte_array[i]);
         party.out[i] = String(byte_array[i + 6]);
+        party.in[i] = String(byte_array[i]);
     }
 
     return party;
