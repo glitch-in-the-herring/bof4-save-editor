@@ -7,7 +7,7 @@ function load_slot(byte_array, address)
     slot["inv"] = load_inv(byte_array.slice(address + 0x5cc, address + 0xe06));
     slot["inv"].zenny = String(from_little_endian_u(byte_array.slice(address + 0x5b4, address + 0x5b8)));
     slot["inv"].zenny = String(from_little_endian_u(byte_array.slice(address + 0xf98, address + 0xf9c)));
-    slot["party"] = load_party(byte_array.slice(address + 0x5bc, address + 0x5c3));
+    slot["party"] = load_party(byte_array.slice(address + 0xee2, address + 0xeed));
 
     return slot;
 }
@@ -104,6 +104,7 @@ function load_party(byte_array)
     for (let i = 0; i < 6; i++)
     {
         party.out[i] = String(byte_array[i]);
+        party.out[i] = String(byte_array[i + 6]);
     }
 
     return party;

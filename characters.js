@@ -162,7 +162,7 @@ function show_party(party_e, slot)
         party_e["out"][i].innerHTML = "";
     }
 
-    load_item_select(party_e["out"], party_list);
+    load_item_select(party_e.concat(party_e["out"]), party_list);
 
     for (let i = 0; i < 6; i++)
     {
