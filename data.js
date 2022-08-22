@@ -6,7 +6,7 @@ function load_slot(byte_array, address)
     slot["chars"] = load_char(byte_array.slice(address + 0x180, address + 0x5A7));
     slot["inv"] = load_inv(byte_array.slice(address + 0x5cc, address + 0xe06));
     slot["inv"].zenny = String(from_little_endian_u(byte_array.slice(address + 0x5b4, address + 0x5b8)));
-    slot["inv"].zenny = String(from_little_endian_u(byte_array.slice(address + 0xf98, address + 0xf9c)));
+    slot["inv"].gp = String(from_little_endian_u(byte_array.slice(address + 0xf98, address + 0xf9c)));
     slot["party"] = load_party(byte_array.slice(address + 0xee2, address + 0xeee));
 
     return slot;
@@ -25,12 +25,12 @@ function load_char(byte_array)
         char["name"] = ascii_decoder(byte_array.slice(base_address, base_address + 6));
         char["lvl"] = String(byte_array[base_address + 10]);
         char["exp"] = String(from_little_endian_u(byte_array.slice(base_address + 12, base_address + 16)));
-        char["chp"] = String(from_little_endian_u(byte_array.slice(base_address + 20, base_address + 22)));
-        char["cap"] = String(from_little_endian_u(byte_array.slice(base_address + 24, base_address + 26)));
-        char["cmhp"] = String(from_little_endian_u(byte_array.slice(base_address + 56, base_address + 58)));
-        char["cmap"] = String(from_little_endian_u(byte_array.slice(base_address + 60, base_address + 62)));
-        char["tmhp"] = String(from_little_endian_u(byte_array.slice(base_address + 92, base_address + 94)));
-        char["tmap"] = String(from_little_endian_u(byte_array.slice(base_address + 96, base_address + 98)));
+        char["chp"] = String(from_little_endian_u(byte_array.slice(base_address + 20, base_address + 24)));
+        char["cap"] = String(from_little_endian_u(byte_array.slice(base_address + 24, base_address + 28)));
+        char["cmhp"] = String(from_little_endian_u(byte_array.slice(base_address + 56, base_address + 60)));
+        char["cmap"] = String(from_little_endian_u(byte_array.slice(base_address + 60, base_address + 64)));
+        char["tmhp"] = String(from_little_endian_u(byte_array.slice(base_address + 92, base_address + 96)));
+        char["tmap"] = String(from_little_endian_u(byte_array.slice(base_address + 96, base_address + 100)));
         char["cp"] = String(from_little_endian_u(byte_array.slice(base_address + 100, base_address + 102)));
         char["pwr"] = String(from_little_endian_u(byte_array.slice(base_address + 102, base_address + 104)));
         char["def"] = String(from_little_endian_u(byte_array.slice(base_address + 104, base_address + 106)));

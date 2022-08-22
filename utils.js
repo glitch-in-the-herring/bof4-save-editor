@@ -15,7 +15,7 @@ function ascii_encoder(s)
 {
     let output = [];
 
-    for (let i = 0; i < 5; i++)
+    for (let i = 0; i < 6; i++)
     {
         if (i < s.length)
             output.push(s[i].charCodeAt());

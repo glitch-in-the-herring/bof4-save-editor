@@ -9,7 +9,7 @@ function save_file(e)
         save_char(e.target.byte_array, e.target.slots[i]);
         save_inv(e.target.byte_array, e.target.slots[i]);
         save_party(e.target.byte_array, e.target.slots[i]);
-        save_counter(e.target.byte_array, e.target.slots[i], e.target.counter_e);
+        //save_counter(e.target.byte_array, e.target.slots[i], e.target.counter_e);
         checksum(e.target.byte_array, e.target.slots[i].addr);
     }
 
@@ -34,105 +34,93 @@ function save_char(byte_array, slot)
 {
     let buffer;
     let base_addr;
-    for (let i = 0; i < 8; i++)
+    for (let i = 0; i < 7; i++)
     {
-        base_addr = slot.addr + 0x290 + 0xa4 * i;
+        base_addr = slot.addr + 0x180 + 0x98 * i;
         buffer = ascii_encoder(slot.chars[i].name);
-        for (let j = 0; j < 5; j++)
+        for (let j = 0; j < 6; j++)
             byte_array[base_addr + j] = buffer[j];
 
-        byte_array[base_addr + 6] = byte_safety_u(slot.chars[i].lvl, 1);
+        byte_array[base_addr + 10] = byte_safety_u(slot.chars[i].lvl, 1);
         buffer = to_little_endian_u(slot.chars[i].exp, 4);
         for (let j = 0; j < 4; j++)
-            byte_array[base_addr + 8 + j] = buffer[j];
+            byte_array[base_addr + 12 + j] = buffer[j];
 
-        buffer = to_little_endian_u(slot.chars[i].chp, 2);
-        buffer = buffer.concat(to_little_endian_u(slot.chars[i].cap, 2));
-        for (let j = 0; j < 4; j++)
+        buffer = to_little_endian_u(slot.chars[i].chp, 4);
+        buffer = buffer.concat(to_little_endian_u(slot.chars[i].cap, 4));
+        for (let j = 0; j < 8; j++)
             byte_array[base_addr + 20 + j] = buffer[j];
 
-        buffer = to_little_endian_u(slot.chars[i].cmhp, 2);
-        buffer = buffer.concat(to_little_endian_u(slot.chars[i].cmap, 2));
-        for (let j = 0; j < 4; j++)
-            byte_array[base_addr + 28 + j] = buffer[j];
+        buffer = to_little_endian_u(slot.chars[i].cmhp, 4);
+        buffer = buffer.concat(to_little_endian_u(slot.chars[i].cmap, 4));
+        for (let j = 0; j < 8; j++)
+            byte_array[base_addr + 56 + j] = buffer[j];
 
-        buffer = to_little_endian_u(slot.chars[i].tmhp, 2);
-        buffer =buffer.concat(to_little_endian_u(slot.chars[i].tmap, 2));
-        for (let j = 0; j < 4; j++)
-            byte_array[base_addr + 60 + j] = buffer[j];
+        buffer = to_little_endian_u(slot.chars[i].tmhp, 4);
+        buffer =buffer.concat(to_little_endian_u(slot.chars[i].tmap, 4));
+        for (let j = 0; j < 8; j++)
+            byte_array[base_addr + 92 + j] = buffer[j];
 
-        buffer = to_little_endian_u(slot.chars[i].pwr, 2);
+        buffer = to_little_endian_u(slot.chars[i].cp, 2);
+        buffer = buffer.concat(to_little_endian_u(slot.chars[i].pwr, 2));
         buffer = buffer.concat(to_little_endian_u(slot.chars[i].def, 2));
         buffer = buffer.concat(to_little_endian_u(slot.chars[i].agl, 2));
-        buffer = buffer.concat(to_little_endian_u(slot.chars[i].int, 2));
-        for (let j = 0; j < 8; j++)
-            byte_array[base_addr + 64 + j] = buffer[j];
+        buffer = buffer.concat(to_little_endian_u(slot.chars[i].wis, 2));
+        for (let j = 0; j < 10; j++)
+            byte_array[base_addr + 100 + j] = buffer[j];
 
-        byte_array[base_addr + 74] = byte_safety_u(slot.chars[i].wpwr, 1);
-        byte_array[base_addr + 25] = byte_safety_u(slot.chars[i].fatg, 1);
-        byte_array[base_addr + 27] = byte_safety_u(slot.chars[i].master, 1);
+        byte_array[base_addr + 132] = byte_safety_u(slot.chars[i].master, 1);
 
-        buffer = [slot.chars[i].sprs, slot.chars[i].rprs, slot.chars[i].crit, slot.chars[i].dodg, slot.chars[i].hits];
-
-        for (let j = 0; j < 5; j++)
-            byte_array[base_addr + 84 + j] = byte_safety_u(buffer[j], 1);
-
-        for (let j = 0; j < 9; j++)
-            byte_array[base_addr + 75 + j] = byte_safety_u(slot.chars[i].res[j], 1);
+        buffer = [slot.chars[i].lrng, slot.chars[i].cntr, slot.chars[i].crit, slot.chars[i].dodg, slot.chars[i].alrt slot.chars[i].hits];
 
         for (let j = 0; j < 6; j++)
-            byte_array[base_addr + 14 + j] = byte_safety_u(slot.chars[i].eqp[j], 1);
+            byte_array[base_addr + 122 + j] = byte_safety_u(buffer[j], 1);
 
-        for (let j = 0; j < 4; j++)
-        {
-            for (let k = 0; k < 10; k++)
-                byte_array[base_addr + 92 + j * 10 + k] = byte_safety_u(slot.chars[i].abil[j][k], 1); 
-        }
+        for (let j = 0; j < 12; j++)
+            byte_array[base_addr + 110 + j] = byte_safety_u(slot.chars[i].res[j], 1);
+
+        for (let j = 0; j < 3; j++)
+            byte_array[base_addr + 128 + j] = byte_safety_u(slot.chars[i].eqp[j], 1);
+
+        for (let j = 0; j < 16; k++)
+            byte_array[base_addr + 30] = byte_safety_u(slot.chars[i].abil[k], 1); 
+
+        for (let j = 0; j < 10; k++)
+            byte_array[base_addr + 46] = byte_safety_u(slot.chars[i].skil[k], 1);
     }
 }
 
 function save_inv(byte_array, slot)
 {
-    let base_addr = slot.addr + 0x974;
-    let id_base_addr;
-    let n_base_addr;
+    let base_addr = slot.addr + 0x5cc;
+    let item_base_addr;
     let buffer;
 
     for (let i = 0; i < 4; i++)
     {
-        id_base_addr = base_addr + 128 * i;
-        n_base_addr = 512 + id_base_addr
+        item_base_addr = base_addr + 512  * i;
         for (let j = 0; j < 128; j++)
         {
-            byte_array[id_base_addr + j] = byte_safety_u(slot.inv.inv[i][j][0], 1);
-            byte_array[n_base_addr + j] = byte_safety_u(slot.inv.inv[i][j][1], 1);
+            byte_array[id_base_addr + j * 2] = byte_safety_u(slot.inv.inv[i][j][0], 1);
+            byte_array[id_base_addr + j * 2 + 1] = byte_safety_u(slot.inv.inv[i][j][1], 1);
         }
     }
 
-    for (let i = 0; i < 128; i++)
-        byte_array[base_addr + 1056 + i] = byte_safety_u(slot.inv.skill[i], 1);
+    for (let i = 0; i < 10; i++)
+        byte_array[base_addr + i] = byte_safety_u(slot.inv.skills[i], 1);    
 
     buffer = to_little_endian_u(slot.inv.zenny, 4);
     for (let i = 0; i < 4; i++)
-        byte_array[slot.addr + 0x878 + i] = buffer[i];
-
-    for (let i = 0; i < 3; i++)
-        byte_array[slot.addr + 0xe70 + i] = slot.inv.genes[i];
-
-    for (let i = 0; i < 3; i++)
-    {
-        byte_array[slot.addr + 0xe74 + i] = slot.inv.masters[i];
-        byte_array[slot.addr + 0xe77 + i] = slot.inv.masters[i];
-    }
+        byte_array[slot.addr + 0x5b4 + i] = buffer[i];
 }
 
 function save_party(byte_array, slot)
 {
-    let base_addr = slot.addr + 0x882;
-    for (let i = 0; i < 3; i++)
+    let base_addr = slot.addr;
+    for (let i = 0; i < 6; i++)
     {
-        byte_array[base_addr + i] = byte_safety_u(slot.party.out[i], 1);
-        byte_array[base_addr + i + 3] = byte_safety_u(slot.party.in[i], 1);
+        byte_array[base_addr + 0x5bc + i] = byte_array[base_addr + 0xee2 + i] = byte_safety_u(slot.party.out[i], 1);
+        byte_array[base_addr + 0xee8 + i] = byte_safety_u(slot.party.in[i], 1);
     }
 }
 
