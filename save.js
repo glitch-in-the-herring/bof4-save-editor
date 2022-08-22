@@ -71,7 +71,7 @@ function save_char(byte_array, slot)
 
         byte_array[base_addr + 132] = byte_safety_u(slot.chars[i].master, 1);
 
-        buffer = [slot.chars[i].lrng, slot.chars[i].cntr, slot.chars[i].crit, slot.chars[i].dodg, slot.chars[i].alrt slot.chars[i].hits];
+        buffer = [slot.chars[i].lrng, slot.chars[i].cntr, slot.chars[i].crit, slot.chars[i].dodg, slot.chars[i].alrt, slot.chars[i].hits];
 
         for (let j = 0; j < 6; j++)
             byte_array[base_addr + 122 + j] = byte_safety_u(buffer[j], 1);
