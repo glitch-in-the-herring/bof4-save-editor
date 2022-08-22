@@ -83,10 +83,10 @@ function save_char(byte_array, slot)
             byte_array[base_addr + 128 + j] = byte_safety_u(slot.chars[i].eqp[j], 1);
 
         for (let j = 0; j < 16; k++)
-            byte_array[base_addr + 30] = byte_safety_u(slot.chars[i].abil[k], 1); 
+            byte_array[base_addr + 30] = byte_safety_u(slot.chars[i].abil[j], 1); 
 
         for (let j = 0; j < 10; k++)
-            byte_array[base_addr + 46] = byte_safety_u(slot.chars[i].skil[k], 1);
+            byte_array[base_addr + 46] = byte_safety_u(slot.chars[i].skil[j], 1);
     }
 }
 
