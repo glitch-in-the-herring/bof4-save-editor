@@ -8,7 +8,7 @@ function save_file(e)
     {
         save_char(e.target.byte_array, e.target.slots[i]);
         save_inv(e.target.byte_array, e.target.slots[i]);
-        save_party(e.target.byte_array, e.target.slots[i]);
+        //save_party(e.target.byte_array, e.target.slots[i]);
         //save_counter(e.target.byte_array, e.target.slots[i], e.target.counter_e);
         checksum(e.target.byte_array, e.target.slots[i].addr);
     }
@@ -83,10 +83,10 @@ function save_char(byte_array, slot)
             byte_array[base_addr + 128 + j] = byte_safety_u(slot.chars[i].eqp[j], 1);
 
         for (let j = 0; j < 16; j++)
-            byte_array[base_addr + 30] = byte_safety_u(slot.chars[i].abil[j], 1); 
+            byte_array[base_addr + 30 + j] = byte_safety_u(slot.chars[i].abil[j], 1); 
 
         for (let j = 0; j < 10; j++)
-            byte_array[base_addr + 46] = byte_safety_u(slot.chars[i].skil[j], 1);
+            byte_array[base_addr + 46 + j] = byte_safety_u(slot.chars[i].skil[j], 1);
     }
 }
 
