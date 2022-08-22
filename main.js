@@ -15,6 +15,7 @@ let cur = {
     "slot" : 0,
     "char" : 0,
     "abil" : 0,
+    "skil" : 0,
     "inv" : 0
 };
 let char_e = get_char_e();
