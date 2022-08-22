@@ -122,7 +122,8 @@ function store_char(char_e, char)
 
     store_parts(char_e.res, char.res);
     store_parts(char_e.eqp, char.eqp);
-    store_parts(char_e.abil, char.abil[char_e.cur.abil]);   
+    store_parts(char_e.abil, char.abil[char_e.cur.abil]); 
+    store_parts(char_e.skil, char.abil[char_e.cur.skil]);   
     char.master = char_e.master.value;
 }
 
